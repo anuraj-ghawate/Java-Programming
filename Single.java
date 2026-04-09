@@ -1,0 +1,64 @@
+class Base
+{
+    public int i;
+    public int j;
+
+    public Base()
+    {
+        System.out.println("Inside Base Constructor");
+        this.i = 0;
+        this.j = 0;
+    }
+
+    protected void finalize()
+    {
+        System.out.println("Inside finalize Method Of Base");
+    }
+
+    public void fun()
+    {
+        System.out.println("Inside base fun");
+    }
+}
+
+class Derived extends Base
+{
+    public int x;
+
+    public Derived()
+    {
+        System.out.println("Inside Derived Constructor");
+
+        this.x = 0;
+    }
+
+    protected void finalize()
+    {
+        System.out.println("Inside finalize Method Of Derived");
+    }
+
+    public void gun()
+    {
+        System.out.println("Inside Gun Of Derived");
+    }
+
+}
+
+class Single
+{
+    public static void main(String A[])
+    {
+        System.out.println("Inside Main");
+
+        Derived dobj = new Derived();
+
+        System.out.println(dobj.i);
+        System.out.println(dobj.j);
+        System.out.println(dobj.x);
+
+        dobj.fun();
+        dobj.gun();
+        
+        System.out.println("End Of Main");
+    }
+}
